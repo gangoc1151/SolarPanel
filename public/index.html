@@ -13,6 +13,13 @@
       crossorigin="anonymous"></script>
       <!--Let browser know website is optimized for mobile-->
      <script src="index.js"></script>
+     <script>$(document).ready(function(){
+      // Get value on button click and show alert
+      $("#myBtn").click(function(){
+          var str = $("#myInput").val();
+          getSensorData(str)
+      });
+  });</script>
     </head>
     <body>
         <div class="navbar-fixed">
@@ -43,8 +50,12 @@
           <h4>Getting real time weather data</h4>
           
         <div>
-          <a id="butt" class="waves-effect waves-light btn" onclick="getSensorData()"><i class="material-icons left"></i>Get Weather Data</i></a>
-          
+          <form>
+          <a id="myBtn" class="waves-effect waves-light btn"><i class="material-icons left"></i>Get Weather Data</i></a>
+          <input placeholder="Location" id="myInput">
+        </form>
+        </div>
+        <div id="map" style="height: 500px;">
         </div>
         
         <table class="striped" id="id02">
@@ -66,5 +77,8 @@
             
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="map.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC221w2EQVhNM9Aj844W6a8O70ZJr63CKY&callback=createMap"
+  type="text/javascript"></script>
     </body>
   </html>
